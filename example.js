@@ -7,7 +7,11 @@ var server = http.createServer(function(request, response) {
   console.log('Incoming ' + request.method + 'request!' + request.url);
   response.statusCode = 200;
   response.setHeader('Content-Type', 'text/html');
-  response.write('<h1>Hello</h1>');
+  if ( request.url === '/goodbye') {
+    response.write('<h1>Goodbye!</h1>');
+  } else {
+    response.write('<h1>hello</h1>');
+  }
   response.end();
 });
 
