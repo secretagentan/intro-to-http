@@ -7,7 +7,7 @@ var server = http.createServer(function(request, response) {
   console.log('Incoming ' + request.method + 'request!');
   response.statusCode = 200;
   response.setHeader('Content-Type', 'text/plain');
-  response.write('Hello\n');
+  response.write('<h1>Hello</h1>\n');
   response.end();
 });
 
